@@ -1,0 +1,19 @@
+<aura:component implements="force:hasRecordId,force:appHostable" access="GLOBAL">
+
+    <aura:handler name="init" value="{!this}" action="{!c.initFinOpEventListener}"/>
+    <aura:attribute name="data" type="Object" access="GLOBAL"/>
+    <aura:handler name="init" value="{!this}" action="{!c.createParameters}" access="PUBLIC"/>
+    <aura:attribute name="parameters" type="String" access="PUBLIC"/>
+
+    <aura:registerEvent name="closeTab" type="c:CAC_CanvasModal_evt"/>
+
+    <!-- force:canvasApp reference: https://developer.salesforce.com/docs/component-library/bundle/force:canvasApp/specification -->
+
+    <div class="slds-align_absolute-center">
+        <force:canvasApp 
+            developerName="CanvasPoc" 
+            parameters="{!v.parameters}" 
+            applicationName="Consola de Operativas"/>
+    </div>
+
+</aura:component>

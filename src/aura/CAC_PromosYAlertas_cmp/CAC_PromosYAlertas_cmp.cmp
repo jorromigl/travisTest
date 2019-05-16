@@ -1,0 +1,21 @@
+<aura:component controller="CAC_Alertas_ctrl" implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global">
+    
+    <aura:attribute name="titleone" type="String" default="Promociones" />
+    <aura:attribute name="titletwo" type="String" default="Alertas" />
+    <aura:attribute name="buttonone" type="String" default="Ver promociones"/>
+    <aura:attribute name="buttontwo" type="String" default="Ver alertas"/>
+    <aura:attribute name="alertas" type="Alertas__c[]"/>
+    
+    <!--COMPONENTE VISIBLE EN LA PAGINA DE CASOS-->
+        <div aura:id="mainBodyCmp" >
+            <lightning:layout horizontalAlign="center" >
+                <lightning:layoutItem size="12" >
+                    <lightning:card title="{!v.titleone}" iconName="utility:events" class="slds-p-around__medium">
+                        <center>
+                            <lightning:button label="{!v.buttonone}" variant="brand" />
+                        </center>
+                    </lightning:card>
+                </lightning:layoutItem>
+            </lightning:layout>
+        </div>
+</aura:component>

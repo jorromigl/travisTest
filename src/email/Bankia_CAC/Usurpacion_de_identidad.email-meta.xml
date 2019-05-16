@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Esta plantilla se utiliza cuando a un cliente le están haciendo usurpación de identidad mediante un reintegro de emergencia.</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Membrete_Bankia</letterhead>
+    <name>Usurpación de identidad</name>
+    <style>freeForm</style>
+    <subject>Petición Tarjeta Emergencia cliente {!Account.LastName}, {!Account.FirstName}</subject>
+    <textOnly>Les informamos que en el día de hoy, hemos recibido una llamada telefónica en el Servicio de Atención Telefónica por su cliente {!Account.LastName}, {!Account.FirstName} con DNI {!Account.Numero_de_documento__c}.
+
+El cliente solicita que desde los Servicios de Atención telefónica no se le facilite el &quot;Reintegro de emergencia&quot; para su uso en cajeros Bankia por posible &quot;USURPACIÓN DE IDENTIDAD&quot;.
+
+Se procede a activar la alerta con la siguiente indicación &quot;NO GENERAR REINTEGRO DE EMERGENCIA&quot;.
+
+Se informa al cliente que si desea volver a tener operativa de nuevo esta funcionalidad es necesario que acuda a su oficina para tramitar esta petición, que deberá notificarnos al centro de Atención con copia a imontoya@bankia.com para su activación.
+
+Para cualquier duda o consulta, sobre el presente correo, estamos a su entera disposición en nuestra dirección de correo electrónico.
+
+Atentamente, reciban un cordial saludo.
+Centro de Atención Bankia</textOnly>
+    <type>html</type>
+    <uiType>Aloha</uiType>
+</EmailTemplate>

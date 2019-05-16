@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <compactLayouts>
+        <fullName>CAC_Usuario</fullName>
+        <fields>Name</fields>
+        <fields>Email_corporativo__c</fields>
+        <fields>Oficina__c</fields>
+        <fields>CompanyName</fields>
+        <fields>Codigo_empleado_SSA__c</fields>
+        <label>CAC Usuario</label>
+    </compactLayouts>
+    <validationRules>
+        <fullName>ComprobacionCodigoSSAenUsuarioCTI_CAC</fullName>
+        <active>true</active>
+        <errorConditionFormula>IF((Usuario_CTI_CAC__c == true)  &amp;&amp; (ISBLANK(Codigo_empleado_SSA__c ) || ISNULL(Codigo_empleado_SSA__c)),true,false)</errorConditionFormula>
+        <errorDisplayField>Codigo_empleado_SSA__c</errorDisplayField>
+        <errorMessage>El usuario debe tener &quot;codigo de empleado SSA&quot; valido para poder ser habilitado como &quot;usuario CTI del CAC&quot;.</errorMessage>
+    </validationRules>
+</CustomObject>

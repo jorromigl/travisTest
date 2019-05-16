@@ -1,0 +1,9 @@
+<aura:component implements="flexipage:availableForAllPageTypes,flexipage:availableForRecordHome,force:hasRecordId" access="global" >
+	<div class="slds-border_bottom slds-theme_shade">
+        <lightning:card variant="Narrow" iconName="action:email">
+            <aura:set attribute = "title">
+                <b>Email</b>
+            </aura:set>
+        </lightning:card>	
+    </div>
+</aura:component>

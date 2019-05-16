@@ -1,0 +1,1885 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <businessProcesses>
+        <fullName>CAC Cierre_Operativa_Consulta</fullName>
+        <isActive>true</isActive>
+        <values>
+            <fullName>En curso</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>No Resuelto</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Resuelto</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transferido</fullName>
+            <default>false</default>
+        </values>
+    </businessProcesses>
+    <businessProcesses>
+        <fullName>CAC_Interaccion</fullName>
+        <isActive>true</isActive>
+        <values>
+            <fullName>En curso</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>No Resuelto</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Resuelto</fullName>
+            <default>false</default>
+        </values>
+    </businessProcesses>
+    <businessProcesses>
+        <fullName>CAC_Operativa_Consulta</fullName>
+        <isActive>true</isActive>
+        <values>
+            <fullName>En curso</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>No Resuelto</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Resuelto</fullName>
+            <default>false</default>
+        </values>
+    </businessProcesses>
+    <compactLayouts>
+        <fullName>CAC_Related_Case</fullName>
+        <fields>Servicio__c</fields>
+        <fields>CAC_Producto__c</fields>
+        <fields>CAC_Operacion__c</fields>
+        <label>CAC_Related_Case</label>
+    </compactLayouts>
+    <fields>
+        <fullName>CAC_Acceso_a_grabacion__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Acceso a grabación</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>CAC_Amelia_data__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Amelia data</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>25</visibleLines>
+    </fields>
+    <fields>
+        <fullName>CAC_Campaign__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Campaign</label>
+        <referenceTo>Campaign</referenceTo>
+        <relationshipLabel>Cases</relationshipLabel>
+        <relationshipName>Cases</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CAC_Canal__c</fullName>
+        <description>Campo del CAC que indica el canal de bankia que origina la  subinteracción.</description>
+        <externalId>false</externalId>
+        <label>Canal</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>BOL</fullName>
+                    <default>false</default>
+                    <label>BOL</label>
+                </value>
+                <value>
+                    <fullName>BOLE</fullName>
+                    <default>false</default>
+                    <label>BOLE</label>
+                </value>
+                <value>
+                    <fullName>App</fullName>
+                    <default>false</default>
+                    <label>App</label>
+                </value>
+                <value>
+                    <fullName>Cajeros</fullName>
+                    <default>false</default>
+                    <label>Cajeros</label>
+                </value>
+                <value>
+                    <fullName>BOLA</fullName>
+                    <default>false</default>
+                    <label>BOLA</label>
+                </value>
+                <value>
+                    <fullName>Oficina</fullName>
+                    <default>false</default>
+                    <label>Oficina</label>
+                </value>
+                <value>
+                    <fullName>Gestor</fullName>
+                    <default>false</default>
+                    <label>Gestor</label>
+                </value>
+                <value>
+                    <fullName>CAC</fullName>
+                    <default>false</default>
+                    <label>CAC</label>
+                </value>
+                <value>
+                    <fullName>Portal publico</fullName>
+                    <default>false</default>
+                    <label>Portal publico</label>
+                </value>
+                <value>
+                    <fullName>TPV-Comercios</fullName>
+                    <default>false</default>
+                    <label>TPV-Comercios</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>CAC_Entrante_Coincide_Indicador__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Campo del CAC que indica si el número de teléfono llamante coincide con el número del cliente almacenado en base de datos. Este campo es leído por un campo fórmula para mostrar una imagen en función de si coincide o no.</description>
+        <externalId>false</externalId>
+        <label>Entrante Coincide Indicador</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CAC_Entrante_Confirmado_Case__c</fullName>
+        <description>Campo del CAC que sirve de indicador visual. Lee del campo CAC_Entrante_Coincide_Indicador__c</description>
+        <externalId>false</externalId>
+        <formula>IMAGE(
+IF(CAC_Entrante_Coincide_Indicador__c, &quot;/resource/OK&quot;, &quot;/resource/KO&quot; ), &quot;Entrante Coincide Confirmado&quot;,35,40)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>¿Entrante=Confirmado?</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CAC_Fin_interaccion_Agente__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Fin interacción Agente</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>CAC_Fin_interaccion_Amelia__c</fullName>
+        <description>Campo que muestra la fecha/hora del fin de la interacción con Amelia</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Fin interacción Amelia</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>CAC_Fin_interaccion_IVR__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Fin interacción IVR</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>CAC_Fin_interaccion_transferido__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Fin interaccion transferido</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>CAC_Flujo__c</fullName>
+        <description>Campo del CAC que indica si el contacto es entrante o saliente.</description>
+        <externalId>false</externalId>
+        <label>Flujo</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Origin</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Entrante</fullName>
+                    <default>false</default>
+                    <label>Entrante</label>
+                </value>
+                <value>
+                    <fullName>Saliente</fullName>
+                    <default>false</default>
+                    <label>Saliente</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Llamada</controllingFieldValue>
+                <controllingFieldValue>Email</controllingFieldValue>
+                <controllingFieldValue>Teléfono</controllingFieldValue>
+                <valueName>Entrante</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Llamada</controllingFieldValue>
+                <controllingFieldValue>Email</controllingFieldValue>
+                <controllingFieldValue>Teléfono</controllingFieldValue>
+                <valueName>Saliente</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>CAC_Inicio_interaccion_Agente__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Inicio interacción Agente</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>CAC_Inicio_interaccion_Amelia__c</fullName>
+        <description>Campo que recoge la fecha/hora del inicio de la interacción con Amelia</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Inicio interacción Amelia</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>CAC_Inicio_interaccion_IVR__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Inicio interacción IVR</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>CAC_Inicio_interaccion_transferido__c</fullName>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Inicio interacción transferido</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>CAC_Intencion__c</fullName>
+        <description>Indicar el nombre del tipo de registro.</description>
+        <externalId>false</externalId>
+        <formula>RecordType.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Intención</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CAC_Motivo_de_escalado__c</fullName>
+        <description>Campo donde el Asistente Virtual recogerá el motivo por el que el contacto ha sido escalado.</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Motivo de escalado</label>
+        <length>13000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Html</type>
+        <visibleLines>10</visibleLines>
+    </fields>
+    <fields>
+        <fullName>CAC_Motivo_de_estado__c</fullName>
+        <description>Campo del CAC que es dependiente del campo &apos;Estado&apos;. Sirve para ampliar información sobre el estado de un caso.</description>
+        <externalId>false</externalId>
+        <label>Motivo de estado</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>Status</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Contacto interrumpido</fullName>
+                    <default>false</default>
+                    <label>Contacto interrumpido</label>
+                </value>
+                <value>
+                    <fullName>Incidencia Técnica</fullName>
+                    <default>false</default>
+                    <label>Incidencia Técnica</label>
+                </value>
+                <value>
+                    <fullName>Notificación</fullName>
+                    <default>false</default>
+                    <label>Notificación</label>
+                </value>
+                <value>
+                    <fullName>Transferido</fullName>
+                    <default>false</default>
+                    <label>Transferido</label>
+                </value>
+                <value>
+                    <fullName>No Localizado</fullName>
+                    <default>false</default>
+                    <label>No Localizado</label>
+                </value>
+                <value>
+                    <fullName>Pérdida de Negocio</fullName>
+                    <default>false</default>
+                    <label>Pérdida de Negocio</label>
+                </value>
+                <value>
+                    <fullName>Sin Motivo</fullName>
+                    <default>false</default>
+                    <label>Sin Motivo</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Resuelto</controllingFieldValue>
+                <controllingFieldValue>No Resuelto</controllingFieldValue>
+                <valueName>Notificación</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Resuelto</controllingFieldValue>
+                <controllingFieldValue>No Resuelto</controllingFieldValue>
+                <valueName>Transferido</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>No Resuelto</controllingFieldValue>
+                <valueName>Contacto interrumpido</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>No Resuelto</controllingFieldValue>
+                <valueName>Incidencia Técnica</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>No Resuelto</controllingFieldValue>
+                <valueName>No Localizado</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>No Resuelto</controllingFieldValue>
+                <valueName>Pérdida de Negocio</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>No Resuelto</controllingFieldValue>
+                <valueName>Sin Motivo</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>CAC_Nivel_Autenticacion_Cliente_Ind__c</fullName>
+        <description>Campo del CAC que indica el nivel de autenticación del cliente. Es un campo que informa Genesys.
+- Nivel 0 --&gt; DNI
+- Nivel 1 --&gt; Clave
+- Nivel 2 --&gt; Firma</description>
+        <externalId>false</externalId>
+        <label>Nivel Autenticación Cliente Indicador</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>0</fullName>
+                    <default>false</default>
+                    <label>0</label>
+                </value>
+                <value>
+                    <fullName>1</fullName>
+                    <default>false</default>
+                    <label>1</label>
+                </value>
+                <value>
+                    <fullName>2</fullName>
+                    <default>false</default>
+                    <label>2</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>CAC_Nivel_Autenticacion__c</fullName>
+        <description>Campo del CAC que sirve para indicar (de forma gráfica) el nivel de autenticación del cliente:
+- Nivel 0 --&gt; DNI
+- Nivel 1 --&gt; Clave
+- Nivel 2 --&gt; Firma</description>
+        <externalId>false</externalId>
+        <formula>CASE(CAC_Nivel_Autenticacion_Cliente_Ind__c,
+&quot;2&quot;,IMAGE(&quot;/resource/Nivel2&quot;, &quot;Nivel 2&quot;,35,35),
+&quot;1&quot;,IMAGE(&quot;/resource/Nivel1&quot;, &quot;Nivel 1&quot;,35,35),
+IMAGE(&quot;/resource/Nivel0&quot;, &quot;Nivel 0&quot;,35,35))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Nivel Autenticación</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CAC_Numero_Llamante__c</fullName>
+        <description>Campo del CAC que se informa con el número de teléfono llamante del cliente. Es un campo informado por Genesys.</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Número Entrante</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>CAC_Operacion__c</fullName>
+        <description>Campo del CAC para la tipificación.</description>
+        <externalId>false</externalId>
+        <label>Operación</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>CAC_Producto__c</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Anulación reintegro</fullName>
+                    <default>false</default>
+                    <label>Anulación reintegro</label>
+                </value>
+                <value>
+                    <fullName>Ayuda de uso</fullName>
+                    <default>false</default>
+                    <label>Ayuda de uso</label>
+                </value>
+                <value>
+                    <fullName>Bloqueo</fullName>
+                    <default>false</default>
+                    <label>Bloqueo</label>
+                </value>
+                <value>
+                    <fullName>Bloqueo/Desbloqueo</fullName>
+                    <default>false</default>
+                    <label>Bloqueo/Desbloqueo</label>
+                </value>
+                <value>
+                    <fullName>Clave de acceso</fullName>
+                    <default>false</default>
+                    <label>Clave de acceso</label>
+                </value>
+                <value>
+                    <fullName>Comisiones</fullName>
+                    <default>false</default>
+                    <label>Comisiones</label>
+                </value>
+                <value>
+                    <fullName>Compra Segura Clave OTP</fullName>
+                    <default>false</default>
+                    <label>Compra Segura Clave OTP</label>
+                </value>
+                <value>
+                    <fullName>Contratación</fullName>
+                    <default>false</default>
+                    <label>Contratación</label>
+                </value>
+                <value>
+                    <fullName>Duplicado</fullName>
+                    <default>false</default>
+                    <label>Duplicado</label>
+                </value>
+                <value>
+                    <fullName>Firma electrónica</fullName>
+                    <default>false</default>
+                    <label>Firma electrónica</label>
+                </value>
+                <value>
+                    <fullName>Fraude</fullName>
+                    <default>false</default>
+                    <label>Fraude</label>
+                </value>
+                <value>
+                    <fullName>Incidencia Cajero</fullName>
+                    <default>false</default>
+                    <label>Incidencia Cajero</label>
+                </value>
+                <value>
+                    <fullName>Información del producto</fullName>
+                    <default>false</default>
+                    <label>Información del producto</label>
+                </value>
+                <value>
+                    <fullName>Información de mi contrato</fullName>
+                    <default>false</default>
+                    <label>Información de mi contrato</label>
+                </value>
+                <value>
+                    <fullName>Ingreso/Traspaso</fullName>
+                    <default>false</default>
+                    <label>Ingreso/Traspaso</label>
+                </value>
+                <value>
+                    <fullName>Modificación contrato</fullName>
+                    <default>false</default>
+                    <label>Modificación contrato</label>
+                </value>
+                <value>
+                    <fullName>Problemas de acceso</fullName>
+                    <default>false</default>
+                    <label>Problemas de acceso</label>
+                </value>
+                <value>
+                    <fullName>Reintegro emergencia</fullName>
+                    <default>false</default>
+                    <label>Reintegro emergencia</label>
+                </value>
+                <value>
+                    <fullName>Retenciones</fullName>
+                    <default>false</default>
+                    <label>Retenciones</label>
+                </value>
+                <value>
+                    <fullName>Saldo/Movimientos</fullName>
+                    <default>false</default>
+                    <label>Saldo/Movimientos</label>
+                </value>
+                <value>
+                    <fullName>Solicitud PIN</fullName>
+                    <default>false</default>
+                    <label>Solicitud PIN</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Tarjeta Debito</controllingFieldValue>
+                <controllingFieldValue>Tarjeta Credito</controllingFieldValue>
+                <controllingFieldValue>Otros</controllingFieldValue>
+                <valueName>Anulación reintegro</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Tarjeta Debito</controllingFieldValue>
+                <controllingFieldValue>Tarjeta Credito</controllingFieldValue>
+                <controllingFieldValue>Otros</controllingFieldValue>
+                <valueName>Ayuda de uso</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Tarjeta Debito</controllingFieldValue>
+                <controllingFieldValue>Tarjeta Credito</controllingFieldValue>
+                <controllingFieldValue>Otros</controllingFieldValue>
+                <valueName>Bloqueo/Desbloqueo</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Tarjeta Debito</controllingFieldValue>
+                <controllingFieldValue>Tarjeta Credito</controllingFieldValue>
+                <controllingFieldValue>Otros</controllingFieldValue>
+                <valueName>Comisiones</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Tarjeta Debito</controllingFieldValue>
+                <controllingFieldValue>Tarjeta Credito</controllingFieldValue>
+                <controllingFieldValue>Otros</controllingFieldValue>
+                <valueName>Compra Segura Clave OTP</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Tarjeta Debito</controllingFieldValue>
+                <controllingFieldValue>Tarjeta Credito</controllingFieldValue>
+                <controllingFieldValue>Banca a Distancia</controllingFieldValue>
+                <controllingFieldValue>Otros</controllingFieldValue>
+                <valueName>Contratación</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Tarjeta Debito</controllingFieldValue>
+                <controllingFieldValue>Tarjeta Credito</controllingFieldValue>
+                <controllingFieldValue>Otros</controllingFieldValue>
+                <valueName>Duplicado</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Tarjeta Debito</controllingFieldValue>
+                <controllingFieldValue>Tarjeta Credito</controllingFieldValue>
+                <controllingFieldValue>Banca a Distancia</controllingFieldValue>
+                <controllingFieldValue>Otros</controllingFieldValue>
+                <valueName>Fraude</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Tarjeta Debito</controllingFieldValue>
+                <controllingFieldValue>Tarjeta Credito</controllingFieldValue>
+                <controllingFieldValue>Otros</controllingFieldValue>
+                <valueName>Incidencia Cajero</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Tarjeta Debito</controllingFieldValue>
+                <controllingFieldValue>Tarjeta Credito</controllingFieldValue>
+                <controllingFieldValue>Banca a Distancia</controllingFieldValue>
+                <controllingFieldValue>Otros</controllingFieldValue>
+                <valueName>Información del producto</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Tarjeta Debito</controllingFieldValue>
+                <controllingFieldValue>Tarjeta Credito</controllingFieldValue>
+                <controllingFieldValue>Banca a Distancia</controllingFieldValue>
+                <controllingFieldValue>Otros</controllingFieldValue>
+                <valueName>Información de mi contrato</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Tarjeta Debito</controllingFieldValue>
+                <controllingFieldValue>Tarjeta Credito</controllingFieldValue>
+                <controllingFieldValue>Banca a Distancia</controllingFieldValue>
+                <controllingFieldValue>Otros</controllingFieldValue>
+                <valueName>Modificación contrato</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Tarjeta Debito</controllingFieldValue>
+                <controllingFieldValue>Tarjeta Credito</controllingFieldValue>
+                <controllingFieldValue>Otros</controllingFieldValue>
+                <valueName>Reintegro emergencia</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Tarjeta Debito</controllingFieldValue>
+                <controllingFieldValue>Tarjeta Credito</controllingFieldValue>
+                <controllingFieldValue>Otros</controllingFieldValue>
+                <valueName>Retenciones</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Tarjeta Debito</controllingFieldValue>
+                <controllingFieldValue>Tarjeta Credito</controllingFieldValue>
+                <controllingFieldValue>Otros</controllingFieldValue>
+                <valueName>Saldo/Movimientos</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Tarjeta Debito</controllingFieldValue>
+                <controllingFieldValue>Tarjeta Credito</controllingFieldValue>
+                <controllingFieldValue>Otros</controllingFieldValue>
+                <valueName>Solicitud PIN</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Tarjeta Credito</controllingFieldValue>
+                <controllingFieldValue>Otros</controllingFieldValue>
+                <valueName>Ingreso/Traspaso</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Banca a Distancia</controllingFieldValue>
+                <valueName>Bloqueo</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Banca a Distancia</controllingFieldValue>
+                <valueName>Clave de acceso</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Banca a Distancia</controllingFieldValue>
+                <valueName>Firma electrónica</valueName>
+            </valueSettings>
+            <valueSettings>
+                <controllingFieldValue>Banca a Distancia</controllingFieldValue>
+                <valueName>Problemas de acceso</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>CAC_Procedencia__c</fullName>
+        <description>Campo del CAC que indica el servicio desde el cual se ha realizado la transferencia</description>
+        <externalId>false</externalId>
+        <label>Transferido de</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>AC</fullName>
+                    <default>false</default>
+                    <label>AC</label>
+                </value>
+                <value>
+                    <fullName>TAO</fullName>
+                    <default>false</default>
+                    <label>TAO</label>
+                </value>
+                <value>
+                    <fullName>DCE</fullName>
+                    <default>false</default>
+                    <label>DCE</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>CAC_Producto__c</fullName>
+        <description>Campo del CAC para la tipificación.</description>
+        <externalId>false</externalId>
+        <label>Producto</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>true</sorted>
+                <value>
+                    <fullName>Banca a Distancia</fullName>
+                    <default>false</default>
+                    <label>Banca a Distancia</label>
+                </value>
+                <value>
+                    <fullName>Otros</fullName>
+                    <default>false</default>
+                    <label>Otros</label>
+                </value>
+                <value>
+                    <fullName>Tarjeta Credito</fullName>
+                    <default>false</default>
+                    <label>Tarjeta Crédito</label>
+                </value>
+                <value>
+                    <fullName>Tarjeta Debito</fullName>
+                    <default>false</default>
+                    <label>Tarjeta Débito</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>CAC_Servicio__c</fullName>
+        <description>Campo del CAC para la tipificación.</description>
+        <externalId>false</externalId>
+        <label>Servicio</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>TAO</fullName>
+                    <default>false</default>
+                    <label>TAO</label>
+                </value>
+                <value>
+                    <fullName>AC</fullName>
+                    <default>false</default>
+                    <label>AC</label>
+                </value>
+                <value>
+                    <fullName>DCCE</fullName>
+                    <default>false</default>
+                    <label>DCCE</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>CAC_Servicio_destino__c</fullName>
+        <description>Campo para, en el caso de transferir el caso, registrar el servicio de destino.</description>
+        <externalId>false</externalId>
+        <label>Servicio destino</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>AC</fullName>
+                    <default>false</default>
+                    <label>AC</label>
+                </value>
+                <value>
+                    <fullName>TAO</fullName>
+                    <default>false</default>
+                    <label>TAO</label>
+                </value>
+                <value>
+                    <fullName>DCCE</fullName>
+                    <default>false</default>
+                    <label>DCCE</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>CAC_Subproducto__c</fullName>
+        <description>Campo del CAC para la tipificación.</description>
+        <externalId>false</externalId>
+        <label>Subproducto</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+        <valueSet>
+            <controllingField>CAC_Producto__c</controllingField>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>AMEX</fullName>
+                    <default>false</default>
+                    <label>AMEX</label>
+                </value>
+            </valueSetDefinition>
+            <valueSettings>
+                <controllingFieldValue>Otros</controllingFieldValue>
+                <valueName>AMEX</valueName>
+            </valueSettings>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>CAC_Telefono_gratuito__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Campo para mostrar si el cliente ha contactado al CAC mediante el teléfono gratuito de Bankia</description>
+        <externalId>false</externalId>
+        <label>Telefono gratuito</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>CAC_Verbio_Canal__c</fullName>
+        <description>Campo del CAC que almacena la pre-tipificación de Pregunta Abierta.  Este campo es informado por Genesys</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Verbio Canal</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CAC_Verbio_Operacion__c</fullName>
+        <description>Campo del CAC que almacena la pre-tipificación de Pregunta Abierta.  Este campo es informado por Genesys</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Verbio Operación</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CAC_Verbio_Producto__c</fullName>
+        <description>Campo del CAC que almacena la pre-tipificación de Pregunta Abierta.  Este campo es informado por Genesys</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Verbio Producto</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>CAC_Verbio_Servicio__c</fullName>
+        <description>Campo del CAC que almacena la pre-tipificación de Pregunta Abierta.  Este campo es informado por Genesys</description>
+        <encryptionScheme>None</encryptionScheme>
+        <externalId>false</externalId>
+        <label>Verbio Servicio</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Origin</fullName>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Status</fullName>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <recordTypes>
+        <fullName>CAC_Cierre</fullName>
+        <active>true</active>
+        <businessProcess>CAC Cierre_Operativa_Consulta</businessProcess>
+        <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+        <description>Tipo de Registro del CAC. Se usa para las subinteracciones cerradas.</description>
+        <label>Operativa-Consulta (Cerrado)</label>
+        <picklistValues>
+            <picklist>CAC_Canal__c</picklist>
+            <values>
+                <fullName>App</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BOL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BOLA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BOLE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CAC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cajeros</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gestor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Oficina</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Portal publico</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TPV-Comercios</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>CAC_Flujo__c</picklist>
+            <values>
+                <fullName>Entrante</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Saliente</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>CAC_Motivo_de_estado__c</picklist>
+            <values>
+                <fullName>Contacto interrumpido</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incidencia Técnica</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Localizado</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Notificación</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pérdida de Negocio</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sin Motivo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transferido</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>CAC_Nivel_Autenticacion_Cliente_Ind__c</picklist>
+            <values>
+                <fullName>0</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>CAC_Operacion__c</picklist>
+            <values>
+                <fullName>Anulación reintegro</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ayuda de uso</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bloqueo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bloqueo%2FDesbloqueo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Clave de acceso</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Comisiones</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Compra Segura Clave OTP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contratación</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Duplicado</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Firma electrónica</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fraude</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incidencia Cajero</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Información de mi contrato</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Información del producto</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ingreso%2FTraspaso</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Modificación contrato</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Problemas de acceso</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reintegro emergencia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retenciones</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Saldo%2FMovimientos</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Solicitud PIN</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>CAC_Procedencia__c</picklist>
+            <values>
+                <fullName>AC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DCE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TAO</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>CAC_Producto__c</picklist>
+            <values>
+                <fullName>Banca a Distancia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Otros</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tarjeta Credito</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tarjeta Debito</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>CAC_Servicio__c</picklist>
+            <values>
+                <fullName>AC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DCCE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TAO</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>CAC_Servicio_destino__c</picklist>
+            <values>
+                <fullName>AC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DCCE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TAO</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>CAC_Subproducto__c</picklist>
+            <values>
+                <fullName>AMEX</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Origin</picklist>
+            <values>
+                <fullName>Bombeo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Chat</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contestador</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>ENT</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Eventos RT cliente</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Chat</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Muro</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Web</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In e-Mail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Llámame</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Otros</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Out Muro</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Out e-Mail</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SAL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Solicitud Gestión CAC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Solicitud Gestión OI</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TLMK</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>Alta</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Baja</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Media</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason</picklist>
+            <values>
+                <fullName>Complex functionality</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Existing problem</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Instructions not clear</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New problem</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>User didn%27t attend training</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Llamada_entrante_Manual</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>CAC_Interaccion</fullName>
+        <active>true</active>
+        <businessProcess>CAC_Interaccion</businessProcess>
+        <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+        <description>Tipo de Caso del CAC. Representa las Interacciones (Contactos/llamadas) o Casos Padre</description>
+        <label>Interaccion</label>
+        <picklistValues>
+            <picklist>CAC_Canal__c</picklist>
+            <values>
+                <fullName>App</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BOL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BOLA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BOLE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CAC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cajeros</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gestor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Oficina</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Portal publico</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TPV-Comercios</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>CAC_Flujo__c</picklist>
+            <values>
+                <fullName>Entrante</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Saliente</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>CAC_Motivo_de_estado__c</picklist>
+            <values>
+                <fullName>Notificación</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>CAC_Nivel_Autenticacion_Cliente_Ind__c</picklist>
+            <values>
+                <fullName>0</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>CAC_Operacion__c</picklist>
+            <values>
+                <fullName>Información del producto</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>CAC_Procedencia__c</picklist>
+            <values>
+                <fullName>AC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TAO</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>CAC_Producto__c</picklist>
+            <values>
+                <fullName>Otros</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>CAC_Servicio__c</picklist>
+            <values>
+                <fullName>AC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DCCE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TAO</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>CAC_Servicio_destino__c</picklist>
+            <values>
+                <fullName>AC</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>CAC_Subproducto__c</picklist>
+            <values>
+                <fullName>AMEX</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Origin</picklist>
+            <values>
+                <fullName>Chat</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Llámame</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Teléfono</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>Alta</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Baja</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Media</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason</picklist>
+            <values>
+                <fullName>Complex functionality</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Existing problem</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Instructions not clear</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New problem</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>User didn%27t attend training</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Llamada_entrante_Manual</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>CAC_Operativa</fullName>
+        <active>true</active>
+        <businessProcess>CAC_Operativa_Consulta</businessProcess>
+        <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+        <description>Tipo de Registro del CAC. Hace referencia a las subinteracciones de tipo Operativa-Consulta.</description>
+        <label>Operativa-Consulta</label>
+        <picklistValues>
+            <picklist>CAC_Canal__c</picklist>
+            <values>
+                <fullName>App</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BOL</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BOLA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>BOLE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>CAC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cajeros</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Gestor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Oficina</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Portal publico</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TPV-Comercios</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>CAC_Flujo__c</picklist>
+            <values>
+                <fullName>Entrante</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Saliente</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>CAC_Motivo_de_estado__c</picklist>
+            <values>
+                <fullName>Contacto interrumpido</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incidencia Técnica</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Localizado</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Notificación</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pérdida de Negocio</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sin Motivo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transferido</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>CAC_Nivel_Autenticacion_Cliente_Ind__c</picklist>
+            <values>
+                <fullName>0</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>2</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>CAC_Operacion__c</picklist>
+            <values>
+                <fullName>Anulación reintegro</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ayuda de uso</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bloqueo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Bloqueo%2FDesbloqueo</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Clave de acceso</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Comisiones</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Compra Segura Clave OTP</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Contratación</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Duplicado</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Firma electrónica</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Fraude</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Incidencia Cajero</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Información de mi contrato</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Información del producto</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Ingreso%2FTraspaso</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Modificación contrato</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Problemas de acceso</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Reintegro emergencia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Retenciones</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Saldo%2FMovimientos</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Solicitud PIN</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>CAC_Procedencia__c</picklist>
+            <values>
+                <fullName>AC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DCE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TAO</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>CAC_Producto__c</picklist>
+            <values>
+                <fullName>Banca a Distancia</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Otros</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tarjeta Credito</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tarjeta Debito</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>CAC_Servicio__c</picklist>
+            <values>
+                <fullName>AC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DCCE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TAO</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>CAC_Servicio_destino__c</picklist>
+            <values>
+                <fullName>AC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DCCE</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>TAO</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>CAC_Subproducto__c</picklist>
+            <values>
+                <fullName>AMEX</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Origin</picklist>
+            <values>
+                <fullName>Chat</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Email</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Llámame</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Priority</picklist>
+            <values>
+                <fullName>Alta</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Baja</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Media</fullName>
+                <default>true</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Reason</picklist>
+            <values>
+                <fullName>Complex functionality</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Existing problem</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Instructions not clear</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>New problem</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>User didn%27t attend training</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Llamada_entrante_Manual</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <validationRules>
+        <fullName>BloquearCambioCuenta_InteraccionCerrada</fullName>
+        <active>true</active>
+        <errorConditionFormula>AND(RecordType.DeveloperName=&quot;CAC_Interaccion&quot;,OR(ISPICKVAL(Status,&quot;No Resuelto&quot;),ISPICKVAL(Status,&quot;Resuelto&quot;)), ISCHANGED( AccountId ))</errorConditionFormula>
+        <errorMessage>No se puede modificar el cliente asociado una vez la interacción está cerrada.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>CAC_Motivo_Estado_NoResuelto</fullName>
+        <active>true</active>
+        <description>Se requiere informar el campo &apos;Motivo de estado&apos; en el caso de que una subinteracción se cierre con estado &apos;No Resuelto&apos;.</description>
+        <errorConditionFormula>AND(RecordType.DeveloperName=&quot;CAC_Operativa&quot;,ISPICKVAL(Status, &quot;No resuelto&quot;),(ISBLANK(TEXT(CAC_Motivo_de_estado__c ))))</errorConditionFormula>
+        <errorMessage>El campo Motivo de estado debe estar informado.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>CAC_No_cerrar_sin_tipificar</fullName>
+        <active>true</active>
+        <description>Requerir que se tipifique una subinteracción para poder cerrarse.</description>
+        <errorConditionFormula>AND( OR(ISPICKVAL(Status,&quot;No Resuelto&quot;),ISPICKVAL(Status,&quot;Resuelto&quot;)), RecordType.DeveloperName=&quot;CAC_Operativa&quot;,OR(ISBLANK(TEXT( CAC_Producto__c)), ISBLANK(TEXT(CAC_Servicio__c)), AND(ISBLANK(TEXT( CAC_Subproducto__c )), ISPICKVAL(CAC_Producto__c, &quot;Otros&quot;) )))</errorConditionFormula>
+        <errorMessage>Es necesario completar la tipificación</errorMessage>
+    </validationRules>
+</CustomObject>

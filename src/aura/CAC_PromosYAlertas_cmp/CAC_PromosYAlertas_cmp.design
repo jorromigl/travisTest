@@ -1,0 +1,6 @@
+<design:component>
+    <design:attribute name="titleone" label="Titulo primera sección" />
+    <design:attribute name="titletwo" label="Titulo segunda sección" />
+    <design:attribute name="buttonone" label="Etiqueta botón primera sección" />
+    <design:attribute name="buttontwo" label="Etiqueta botón segunda sección" />
+</design:component>

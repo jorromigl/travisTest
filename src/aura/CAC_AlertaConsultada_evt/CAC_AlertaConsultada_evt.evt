@@ -1,0 +1,3 @@
+<aura:event type="COMPONENT" description="Informa al componente padre cuando se abre una alerta">
+<aura:attribute name="alertId" type="Id"/>
+</aura:event>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>Edit</caseAccessLevel>
+    <contactAccessLevel>Edit</contactAccessLevel>
+    <description>CAC_Supervisor_Marktel</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>CAC_Supervisor_Marktel</name>
+    <opportunityAccessLevel>None</opportunityAccessLevel>
+    <parentRole>CAC_Manager_Marktel</parentRole>
+</Role>
